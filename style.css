@@ -1,0 +1,66 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+header{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+main .songs{
+	display: flex;
+	flex-wrap: wrap;
+	padding:100px;
+	justify-content: center;
+}
+
+.song {
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: center;
+	align-content: flex-end;
+	align-items: center;
+	flex:1 18%;
+	margin: 10px 0px;
+}
+
+.songs .song p.artist{
+	color:rgba(0,0,0,.5);
+	font-size:12px;
+}
+
+.songs .song a {
+	transition: all .3s ease;
+}
+
+.songs .song a:hover {
+	transition: all .3s ease;
+	transform: scale(1.04);
+	opacity:.5;
+}
+
+#query{
+	width: 400px;
+	padding: 10px;
+	border: none;
+	border-bottom: 1px solid rgba(0,0,0,.2);
+	font-size:15px;
+	padding-bottom:0;
+	padding-top:25px;
+}
+
+#query:focus{
+	outline: none;
+}
+
+#query::placeholder{
+	color:rgba(0,0,0,.5);
+
+}
+
+
