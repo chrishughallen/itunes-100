@@ -41,9 +41,9 @@ const buildPage = (arr) =>{
 const filter = (query) => {
 	let results = []
 	songs.forEach((song)=>{
-		if(song.title.toLowerCase().indexOf(query) != -1 
-			|| song.artist.toLowerCase().indexOf(query) != -1 
-			|| song.genre.toLowerCase().indexOf(query) != -1){
+		if(song.title.toLowerCase().indexOf(query.toLowerCase()) != -1 
+			|| song.artist.toLowerCase().indexOf(query.toLowerCase()) != -1 
+			|| song.genre.toLowerCase().indexOf(query.toLowerCase()) != -1){
 			results.push(song)
 		}
 	})
@@ -52,7 +52,7 @@ const filter = (query) => {
 
 
 // TRIGGERS THE FILTER FUNCTION EACH TIME A KEY ENTRY IS MADE FOR REAL TIME SEARCHES
- $('#query').on('keyup',()=>{
+ $(document).on('keyup','#query',()=>{
   		filter($('#query').val())
   })
 
