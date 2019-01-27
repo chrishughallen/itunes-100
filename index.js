@@ -39,6 +39,12 @@ const buildPage = (arr) =>{
 
 // CREATES A NEW LIST AND BUILDS IT TO THE PAGE BASED ON THE USERS QUERY
 const filter = (query) => {
+  $('#searchResults').show()
+  
+  if(query.length<1){
+    $('#searchResults').hide()
+    
+  }
 	let results = []
 	songs.forEach((song)=>{
 		if(song.title.toLowerCase().indexOf(query.toLowerCase()) != -1 
@@ -48,8 +54,10 @@ const filter = (query) => {
 		}
 	})
 	buildPage(results)
+  $('#searchQuery').text(query)
+  
 }
-
+$('#searchResults').hide()
 
 // TRIGGERS THE FILTER FUNCTION EACH TIME A KEY ENTRY IS MADE FOR REAL TIME SEARCHES
  $(document).on('keyup','#query',()=>{
